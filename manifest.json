@@ -1,0 +1,6 @@
+{
+  "name": "Polymer2Weather",
+  "short_name": "Polymer2Weather",
+  "start_url": "/",
+  "display": "standalone"
+}
