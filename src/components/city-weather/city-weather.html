@@ -1,8 +1,25 @@
 <link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../location-inputs/location-inputs.html">
 
 <dom-module id="city-weather">
     <template>
+        <style>
+            .input-container, .output-container {
+                width: 500px;
+                border: 1px solid #000;
+                padding: 15px;
+                margin-bottom: 10px;
+            }
+        </style>
+
         <h1>City weather</h1>
+
+        <div class="input-container">
+            <location-inputs></location-inputs>
+        </div>
+        <div class="output-container">
+            city-name: [[cityName]]
+        </div>
     </template>
 
     <script src="./city-weather.js"></script>
