@@ -29,7 +29,7 @@ class CityWeather extends Polymer.Element {
         }
     }
     handleResponse() {
-        console.log(this.get('weatherData'));
+        this.set('weatherData.main.temp', Math.round(this.get('weatherData.main.temp')));
     }
 }
 customElements.define(CityWeather.is, CityWeather);
