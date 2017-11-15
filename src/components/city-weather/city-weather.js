@@ -20,6 +20,7 @@ class CityWeather extends Polymer.Element {
         });
     }
     handleSearch(searchData) {
+        console.log(searchData.detail);
         this.set('cityName', searchData.detail.cityName);
     }
 }

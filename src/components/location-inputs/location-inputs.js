@@ -6,7 +6,7 @@ class LocationInputs extends Polymer.Element {
         return {
             cityName: {
                 type: String,
-                value: 'test'
+                notify: true
             }
         };
     }
