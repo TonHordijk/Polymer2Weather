@@ -6,12 +6,30 @@ class CityWeather extends Polymer.Element {
         return {
             city: {
                 type: String,
-                value: ''
-            }
+                value: '',
+                observer: 'cityChanged'
+            },
+            urlParams: {
+                type: Object,
+                value: {
+                    appid: 'e6d58a6c77231ac95d1d145c6d7d2c36',
+                    units: 'metric'
+                }
+            },
+            weatherData: Object
         };
     }
     constructor(){
         super();
+    }
+    cityChanged() {
+        if(this.get('city')) {
+            this.set('urlParams.q', this.get('city'));
+            this.$.getCityWeatherData.generateRequest();
+        }
+    }
+    handleResponse() {
+        console.log(this.get('weatherData'));
     }
 }
 customElements.define(CityWeather.is, CityWeather);

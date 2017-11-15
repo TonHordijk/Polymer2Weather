@@ -1,4 +1,5 @@
 <link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../location-inputs/location-inputs.html">
 
 <dom-module id="city-weather">
@@ -11,6 +12,16 @@
                 margin-bottom: 10px;
             }
         </style>
+
+        <iron-ajax id="getCityWeatherData"
+                   url="http://api.openweathermap.org/data/2.5/weather"
+                   params='[[urlParams]]'
+                   handle-as="json"
+                   last-response="{{weatherData}}"
+                   on-response="handleResponse"
+                   debounce-duration="300"
+        >
+        </iron-ajax>
 
         <div class="container">
             <h1>Dit is het weer van vandaag in [[city]]</h1>

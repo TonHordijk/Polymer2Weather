@@ -29,7 +29,11 @@ class WeatherApp extends Polymer.Element {
             if(searchData.detail.cityName) {
                 this.set('cityName', searchData.detail.cityName);
                 this.set('cityWeatherHidden', false);
+            } else {
+                this.set('cityWeatherHidden', true);
             }
+        } else {
+            this.set('cityWeatherHidden', true);
         }
 
     }
