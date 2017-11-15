@@ -14,7 +14,7 @@ class LocationInputs extends Polymer.Element {
         super();
     }
     searchClicked() {
-        this.dispatchEvent(new CustomEvent('evt-searchCityWeather', {
+        this.dispatchEvent(new CustomEvent('evt-searchWeatherInfo', {
             detail: {
                 cityName: this.get('cityName')
             },

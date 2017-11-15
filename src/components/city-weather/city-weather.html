@@ -4,7 +4,7 @@
 <dom-module id="city-weather">
     <template>
         <style>
-            .input-container, .output-container {
+            .container {
                 width: 500px;
                 border: 1px solid #000;
                 padding: 15px;
@@ -12,13 +12,8 @@
             }
         </style>
 
-        <h1>City weather</h1>
-
-        <div class="input-container">
-            <location-inputs></location-inputs>
-        </div>
-        <div class="output-container">
-            city-name: [[cityName]]
+        <div class="container">
+            <h1>Dit is het weer van vandaag in [[city]]</h1>
         </div>
     </template>
 

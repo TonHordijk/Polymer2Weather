@@ -4,7 +4,7 @@ class CityWeather extends Polymer.Element {
     }
     static get properties() {
         return {
-            cityName: {
+            city: {
                 type: String,
                 value: ''
             }
@@ -12,16 +12,6 @@ class CityWeather extends Polymer.Element {
     }
     constructor(){
         super();
-    }
-    ready() {
-        super.ready();
-        this.addEventListener('evt-searchCityWeather', function(e){
-            this.handleSearch(e);
-        });
-    }
-    handleSearch(searchData) {
-        console.log(searchData.detail);
-        this.set('cityName', searchData.detail.cityName);
     }
 }
 customElements.define(CityWeather.is, CityWeather);
