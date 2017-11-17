@@ -6,7 +6,6 @@ class CityWeather extends Polymer.Element {
         return {
             city: {
                 type: String,
-                value: '',
                 observer: 'cityChanged'
             },
             urlParams: {

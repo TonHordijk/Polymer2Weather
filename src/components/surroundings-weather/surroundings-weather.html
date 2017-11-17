@@ -1,0 +1,23 @@
+<dom-module id="surroundings-weather">
+    <template>
+        <iron-ajax id="getSurroundingsWeatherData"
+                   url="http://api.openweathermap.org/data/2.5/find"
+                   params='[[urlParams]]'
+                   handle-as="json"
+                   last-response="{{weatherData}}"
+                   on-response="handleResponse"
+                   debounce-duration="300"
+        >
+        </iron-ajax>
+
+        <h1>Hieronder ziet u het weer rond de coordinaten [[lat]], [[long]].</h1>
+
+        <ul>
+            <template is="dom-repeat" items="{{weatherData.list}}">
+                <li><strong>[[item.name]]</strong> - [[item.main.temp]]&deg; Celcius, [[item.main.humidity]]% luchtvochtigheid</li>
+            </template>
+        </ul>
+    </template>
+
+    <script src="surroundings-weather.js"></script>
+</dom-module>

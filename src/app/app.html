@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../components/city-weather/city-weather.html">
+<link rel="import" href="../components/surroundings-weather/surroundings-weather.html">
 <link rel="import" href="../components/location-inputs/location-inputs.html">
 
 <dom-module id="weather-app">
@@ -12,6 +13,7 @@
 
         <location-inputs></location-inputs>
         <city-weather city="[[cityName]]" hidden$="[[cityWeatherHidden]]"></city-weather>
+        <surroundings-weather lat="[[latVal]]" long="[[longVal]]" hidden$="[[surroundingsWeatherHidden]]"></surroundings-weather>
     </template>
 
     <script src="./app.js"></script>

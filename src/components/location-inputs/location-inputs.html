@@ -2,7 +2,12 @@
     <template>
         <style></style>
 
-        <p><input type="text" id="cityname" value="{{cityName::input}}" /></p>
+        <p>
+            <input type="radio" name="degreeOrName" checked="{{cityNameChecked::change}}" /> Zoeken op naam ({{cityNameChecked}})
+            <input type="radio" name="degreeOrName" checked="{{degreeChecked::change}}" /> Zoeken op lengte- en breedtegraad ({{degreeChecked}})
+        </p>
+        <p hidden$="{{cityNameChecked}}">Breedtegraad: <input type="number" id="lat" value="{{latVal::input}}" /> Lengtegraad: <input type="number" id="long" value="{{longVal::input}}" /></p>
+        <p hidden$="{{degreeChecked}}">Stad: <input type="text" id="cityname" value="{{cityName::input}}" /></p>
 
         <button on-click="searchClicked">Search</button>
     </template>
