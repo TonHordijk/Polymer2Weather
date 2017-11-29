@@ -1,3 +1,5 @@
+<link rel="import" href="../../../bower_components/google-recaptcha/google-recaptcha.html">
+
 <dom-module id="location-inputs">
     <template>
         <style></style>
@@ -9,7 +11,11 @@
         <p hidden$="{{cityNameChecked}}">Breedtegraad: <input type="number" id="lat" value="{{latVal::input}}" /> Lengtegraad: <input type="number" id="long" value="{{longVal::input}}" /></p>
         <p hidden$="{{degreeChecked}}">Stad: <input type="text" id="cityname" value="{{cityName::input}}" /></p>
 
-        <button on-click="searchClicked">Search</button>
+        <p>
+            <google-recaptcha value="{{token}}" sitekey="6LeY7joUAAAAACxMt2iIGSy0c1V6b84M85cWmVF3"></google-recaptcha>
+        </p>
+
+        <button disabled$="{{!tokenFilled}}" on-click="searchClicked">Search</button>
     </template>
 
     <script src="location-inputs.js"></script>

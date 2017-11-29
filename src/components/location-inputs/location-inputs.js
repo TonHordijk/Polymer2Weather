@@ -25,6 +25,15 @@ class LocationInputs extends Polymer.Element {
                 type: Boolean,
                 value: false,
                 observer: 'degreeRadioChanged'
+            },
+            token: {
+                type: String,
+                value: '',
+                observer: 'tokenChanged'
+            },
+            tokenFilled: {
+                type: Boolean,
+                value: false
             }
         };
     }
@@ -62,6 +71,13 @@ class LocationInputs extends Polymer.Element {
                 composed: true,
                 bubbles: true
             }));
+        }
+    }
+    tokenChanged(newVal) {
+        if(newVal !== ''){
+            this.set('tokenFilled', true);
+        } else {
+            this.set('tokenFilled', false);
         }
     }
 }

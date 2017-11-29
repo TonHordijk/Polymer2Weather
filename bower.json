@@ -2,7 +2,8 @@
   "name": "Polymer2Weather",
   "main": "index.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^2.0.0"
+    "polymer": "Polymer/polymer#^2.0.0",
+    "google-recaptcha": "Zecat/google-recaptcha#^0.2.2"
   },
   "devDependencies": {
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0",
